@@ -1,55 +1,35 @@
-# Binary String Iteration
+Given a binary string s. Perform r iterations on string s, where in each iteration 0 becomes 01 and 1 becomes 10. Find the nth character (considering 0 based indexing) of the string after performing these r iterations (see examples for better understanding).
 
-Given a binary string `s`, perform `r` iterations on string `s`, where in each iteration 0 becomes 01 and 1 becomes 10. Find the nth character (considering 0-based indexing) of the string after performing these `r` iterations.
+Example 1:
 
-## Example
-
-### Input
-
+Input:
 s = "1100"
 r = 2
 n = 3
-
-shell
-Copy code
-
-### Output
-
+Output:
 1
+Explanation: 
+After 1st iteration s becomes "10100101".
+After 2nd iteration s becomes "1001100101100110".
+Now, we can clearly see that the character at 3rd index is 1, and so the output.
+Example 2:
 
-c
-Copy code
-
-### Explanation
-
-After 1st iteration, `s` becomes "10100101". After 2nd iteration, `s` becomes "1001100101100110". Now, we can clearly see that the character at 3rd index is 1, and so the output.
-
-## Usage
-
-```cpp
-#include <iostream>
-#include <string>
-using namespace std;
-
-char nthCharacter(string s, int r, int n) {
-    // Implementation of the nthCharacter function
-    // ...
-}
-
-int main() {
-    string s = "1100";
-    int r = 2;
-    int n = 3;
-    
-    char result = nthCharacter(s, r, n);
-    cout << "The nth character after performing iterations is: " << result << endl;
-    
-    return 0;
-}
-Complexity Analysis
-Time Complexity: O(r * |s|), where |s| is the length of the input string s.
-Space Complexity: O(|s|).
-Constraints
-1 ≤ |s| ≤ 10^3
+Input:
+s = "1010"
+r = 1
+n = 2
+Output:
+0
+Explanation : 
+After 1st iteration s becomes "10011001".
+Now, we can clearly see that the character at 2nd index is 0, and so the output.
+Your task:
+You don't need to read input or print anything. Your task is to complete the function nthCharacter() which takes the string s and integers r and n as input parameters and returns the n-th character of the string after performing r operations on s.
+ 
+Expected Time Complexity: O(r*|s|)
+Expected Auxilary Space: O(|s|)
+ 
+Constraints:
+1 ≤ |s| ≤ 103
 1 ≤ r ≤ 20
 0 ≤ n < |s|
