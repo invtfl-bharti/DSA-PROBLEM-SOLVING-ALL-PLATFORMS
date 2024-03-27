@@ -1,0 +1,73 @@
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+
+using namespace std;
+
+// } Driver Code Ends
+class Solution{
+public:
+    vector<int> findTwoElement(vector<int> arr, int n) {
+        // code here
+        // Created an array
+        vector<int>vec;
+        // solved the problem using hashmap
+        unordered_map<int,int>freqMap;
+        // initializing the first element of the array as repeating
+        int repeating = arr[0];
+        int missing = 0;
+        // adding the elements of array into the Map
+        for(int i=0;i<n;i++) {
+            // if the element already exists increase the value number
+            // freqMap.end() is used to check whether the element is not found.
+            if(freqMap.find(arr[i])!=freqMap.end()) {
+                freqMap[arr[i]]++;
+            }
+            // If the eelement doesnt exist it will be initialized by 1
+            else {
+                freqMap[arr[i]] = 1;
+            }
+            // Checking if the key has more than 1 value if yes, then push back into the array
+            
+            if(freqMap[arr[i]]>1) {
+                // Push back the element which is repeated
+                vec.push_back(arr[i]);
+            }
+        }
+        // Now checking the one which is missing
+        // Checking the index number whether it is present or not
+        for(int i=1;i<=n;i++) {
+            // if the number is already present then continue
+           if(freqMap.find(i) != freqMap.end()){
+               continue;
+           }
+        //   if the index number is not present then push back in the newly created array and the 
+        // use break statement to come out of the loop once the missing element is found
+           else {
+               vec.push_back(i);
+               break;
+           }
+        }
+        // Return the array
+        return vec;
+    }
+};
+
+//{ Driver Code Starts.
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+        vector<int> a(n);
+        for (int i = 0; i < n; i++) {
+            cin >> a[i];
+        }
+        Solution ob;
+        auto ans = ob.findTwoElement(a, n);
+        cout << ans[0] << " " << ans[1] << "\n";
+    }
+    return 0;
+}
+// } Driver Code Ends
