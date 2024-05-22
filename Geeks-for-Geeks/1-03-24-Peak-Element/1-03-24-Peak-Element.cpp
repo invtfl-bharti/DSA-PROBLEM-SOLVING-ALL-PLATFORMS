@@ -77,6 +77,9 @@ int main() {
     		    f=0;
     		cout<<f<<endl;
 		}
+
+
+		
 		
 	}
 
