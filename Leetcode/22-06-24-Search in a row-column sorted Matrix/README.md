@@ -1,32 +1,31 @@
-Given a matrix of size n x m, where every row and column is sorted in increasing order, and a number x. Find whether element x is present in the matrix or not.
+You are given an integer array nums. In one operation, you can add or subtract 1 from any element of nums.
+
+Return the minimum number of operations to make all elements of nums divisible by 3.
+
+ 
 
 Example 1:
 
-Input:
-n = 3, m = 3, x = 62
-matrix[][] = {{ 3, 30, 38},
-              {36, 43, 60},
-              {40, 51, 69}}
-Output: 0
+Input: nums = [1,2,3,4]
+
+Output: 3
+
 Explanation:
-62 is not present in the matrix, 
-so output is 0.
+
+All array elements can be made divisible by 3 using 3 operations:
+
+Subtract 1 from 1.
+Add 1 to 2.
+Subtract 1 from 4.
 Example 2:
 
-Input:
-n = 1, m = 6, x = 55
-matrix[][] = {{18, 21, 27, 38, 55, 67}}
-Output: 1
-Explanation: 55 is present in the matrix.
+Input: nums = [3,6,9]
 
-Your Task:
-You don't need to read input or print anything. Complete the function search() that takes n, m, x, and matrix[][] as input parameters and returns a boolean value. True if x is present in the matrix and false if it is not present.
+Output: 0
 
-Expected Time Complexity: O(N + M)
-Expected Auxiliary Space: O(1)
+ 
 
 Constraints:
-1 <= N, M <= 1000
-1 <= mat[][] <= 105
-1 <= X <= 1000
 
+1 <= nums.length <= 50
+1 <= nums[i] <= 50
